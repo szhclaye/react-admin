@@ -63,7 +63,9 @@ class SiderCustom extends Component {
                 collapsed={this.props.collapsed}
                 style={{ overflowY: 'auto' }}
             >
-                <div className="logo">六安中院资产管理</div>
+                {this.props.collapsed?
+                       null: <div className="logo"><p>六安中院资产管理</p></div>}
+                
                 <SiderMenu
                     menus={menus}
                     onClick={this.menuClick}
