@@ -11,13 +11,11 @@ import AsynchronousTable from '../components/tables/AsynchronousTable';
 import Echarts from '../components/charts/Echarts';
 import Recharts from '../components/charts/Recharts';
 import Icons from '../components/manager/Icons';
-import Buttons from '../components/manager/Buttons';
 import Spins from '../components/manager/Spins';
 import Modals from '../components/manager/Modals';
 import Notifications from '../components/manager/Notifications';
 import Tabs from '../components/manager/Tabs';
 import Banners from '../components/manager/banners';
-import Drags from '../components/manager/Draggable';
 import Dashboard from '../components/dashboard/Dashboard';
 import Gallery from '../components/manager/Gallery';
 import BasicAnimations from '../components/animation/BasicAnimations';
@@ -53,16 +51,13 @@ export default class CRouter extends Component {
                 <Route exact path="/app/table/asynchronousTable" component={AsynchronousTable} />
                 <Route exact path="/app/chart/echarts" component={Echarts} />
                 <Route exact path="/app/chart/recharts" component={Recharts} />
-
                 <Route exact path="/app/manager/icons" component={Icons} />
-                <Route exact path="/app/manager/buttons" component={Buttons} />
                 <Route exact path="/app/manager/spins" component={Spins} />
                 <Route exact path="/app/manager/modals" component={Modals} />
                 <Route exact path="/app/manager/notifications" component={Notifications} />
                 <Route exact path="/app/manager/tabs" component={Tabs} />
                 <Route exact path="/app/manager/banners" component={Banners} />
                 <Route exact path="/app/manager/wysiwyg" component={WysiwygBundle} />
-                <Route exact path="/app/manager/drags" component={Drags} />
                 <Route exact path="/app/manager/gallery" component={Gallery} />
                 <Route exact path="/app/manager/map" component={Mapmanager} />
 

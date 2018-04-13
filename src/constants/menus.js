@@ -1,10 +1,8 @@
 export const menus = [
     { key: '/app/dashboard/index', title: '首页', icon: 'mobile', },
     {
-        key: '/app/manager', title: '固定资产管理', icon: 'scan',
+        key: '/app/manager', title: '资产管理', icon: 'scan',
         sub: [
-            { key: '/app/manager/buttons', title: '按钮', icon: '', },
-            { key: '/app/manager/icons', title: '图标', icon: '', },
             { key: '/app/manager/spins', title: '加载中', icon: '', },
             { key: '/app/manager/modals', title: '对话框', icon: '', },
             { key: '/app/manager/notifications', title: '通知提醒框', icon: '', },
@@ -17,14 +15,14 @@ export const menus = [
         ],
     },
     {
-        key: '/app/animation', title: '动画', icon: 'rocket',
+        key: '/app/animation', title: '系统管理', icon: 'rocket',
         sub: [
-            { key: '/app/animation/basicAnimations', title: '基础动画', icon: '', },
-            { key: '/app/animation/exampleAnimations', title: '动画案例', icon: '', },
+            { key: '/app/animation/basicAnimations', title: '用户管理', icon: '', },
+            { key: '/app/animation/exampleAnimations', title: '资产分类', icon: '', },
         ],
     },
     {
-        key: '/app/table', title: '表格', icon: 'copy',
+        key: '/app/table', title: '分析报表', icon: 'copy',
         sub: [
             { key: '/app/table/basicTable', title: '基础表格', icon: '', },
             { key: '/app/table/advancedTable', title: '高级表格', icon: '', },
@@ -32,9 +30,10 @@ export const menus = [
         ],
     },
     {
-        key: '/app/form', title: '表单', icon: 'edit',
+        key: '/app/auth', title: '用户信息', icon: 'safety',
         sub: [
-            { key: '/app/form/basicForm', title: '基础表单', icon: '', },
+            { key: '/app/auth/basic', title: '基础演示', icon: '', },
+            { key: '/app/auth/routerEnter', title: '路由拦截', icon: '', },
         ],
     },
     {
@@ -51,14 +50,5 @@ export const menus = [
             { key: '/404', title: '404', icon: '', },
         ],
     },
-    {
-        key: '/app/auth', title: '权限管理', icon: 'safety',
-        sub: [
-            { key: '/app/auth/basic', title: '基础演示', icon: '', },
-            { key: '/app/auth/routerEnter', title: '路由拦截', icon: '', },
-        ],
-    },
-    {
-        key: '/app/cssModule', title: 'cssModule', icon: 'star',
-    },
+    
 ];
