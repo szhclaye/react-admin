@@ -2,14 +2,15 @@
  * Created by hao.cheng on 2017/4/23.
  */
 import React from 'react';
-import { Row, Col, Card, Spin, Alert, Switch, Button } from 'antd';
+import { Row, Col, Card, Input, Spin, Alert, Switch, Button } from 'antd';
 import BreadcrumbCustom from '../BreadcrumbCustom';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 
+const Search = Input.Search;
 class WareCards extends React.Component {
     state = { loading: false };
-    toggle = (value) => {
+    toggle = value => {
         this.setState({ loading: value });
     };
     nprogressStart = () => {
@@ -28,24 +29,24 @@ class WareCards extends React.Component {
         );
         return (
             <div className="gutter-example button-demo">
-                <BreadcrumbCustom first="UI" second="加载中" />
+                <BreadcrumbCustom first="资产管理" second="资产卡片" />
                 <Row gutter={16}>
-                    <Col className="gutter-row" md={12}>
-                        <div className="gutter-box">
-                            <Card bordered={false}>
-                                <Spin />
-                            </Card>
-                        </div>
-                    </Col>
-                    <Col className="gutter-row" md={12}>
-                        <div className="gutter-box">
-                            <Card bordered={false}>
-                                <Spin size="small" />
-                                <Spin />
-                                <Spin size="large" />
-                            </Card>
-                        </div>
-                    </Col>
+                    <div className="gutter-box">
+                        <Card bordered={false}>
+                            <Col className="gutter-row" md={12}>
+                                <Search
+                                    placeholder="input search text"
+                                    onSearch={value => console.log(value)}
+                                    enterButton
+                                />
+                            </Col>
+                            <Col className="gutter-row warecard-buttons" md={12}>
+                                <Button type="primary">新增</Button>
+                                <Button type="primary">删除</Button>
+                                <Button type="primary">修改</Button>
+                            </Col>
+                        </Card>
+                    </div>
                 </Row>
                 <Row gutter={16}>
                     <Col className="gutter-row" md={12}>
@@ -65,8 +66,13 @@ class WareCards extends React.Component {
                     <Col className="gutter-row" md={12}>
                         <div className="gutter-box">
                             <Card bordered={false}>
-                                <Spin spinning={this.state.loading}>{container}</Spin>
-                                Loading state：<Switch checked={this.state.loading} onChange={this.toggle} />
+                                <Spin spinning={this.state.loading}>
+                                    {container}
+                                </Spin>
+                                Loading state：<Switch
+                                    checked={this.state.loading}
+                                    onChange={this.toggle}
+                                              />
                             </Card>
                         </div>
                     </Col>
@@ -75,19 +81,25 @@ class WareCards extends React.Component {
                             <Card bordered={false}>
                                 <h4>顶部进度条</h4>
                                 <p>
-                                    <Button icon="caret-right" onClick={this.nprogressStart} />
+                                    <Button
+                                        icon="caret-right"
+                                        onClick={this.nprogressStart}
+                                    />
                                     <span> NProgress.start() — 显示进度条</span>
                                 </p>
-                                <p style={{marginTop: 20}}>
-                                    <Button icon="caret-right" onClick={this.nprogressDone} />
-                                    <span>  NProgress.done() — 进度条完成</span>
+                                <p style={{ marginTop: 20 }}>
+                                    <Button
+                                        icon="caret-right"
+                                        onClick={this.nprogressDone}
+                                    />
+                                    <span> NProgress.done() — 进度条完成</span>
                                 </p>
                             </Card>
                         </div>
                     </Col>
                 </Row>
             </div>
-        )
+        );
     }
 }
 
