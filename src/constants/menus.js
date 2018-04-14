@@ -6,8 +6,8 @@ export const menus = [
     {
         key: '/app/manager', title: '资产管理', icon: 'scan',
         sub: [
-            { key: '/app/manager/spins', title: '加载中', icon: '', },
-            { key: '/app/manager/modals', title: '对话框', icon: '', },     
+            { key: '/app/manager/storeroom', title: '资产仓库', icon: '', },
+            { key: '/app/manager/modals', title: '分配记录', icon: '', },     
         ],
     },
     {

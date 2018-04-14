@@ -7,7 +7,7 @@ import BreadcrumbCustom from '../BreadcrumbCustom';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 
-class Spins extends React.Component {
+class StoreRoom extends React.Component {
     state = { loading: false };
     toggle = (value) => {
         this.setState({ loading: value });
@@ -91,4 +91,4 @@ class Spins extends React.Component {
     }
 }
 
-export default Spins;
+export default StoreRoom;
