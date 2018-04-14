@@ -10,7 +10,7 @@ import AdvancedTable from '../components/tables/AdvancedTables';
 import AsynchronousTable from '../components/tables/AsynchronousTable';
 import Echarts from '../components/charts/Echarts';
 import Recharts from '../components/charts/Recharts';
-import StoreRoom from '../components/manager/StoreRoom';
+import WareCards from '../components/manager/WareCards';
 import Modals from '../components/manager/Modals';
 
 import Tabs from '../components/manager/Tabs';
@@ -46,7 +46,7 @@ export default class CRouter extends Component {
                 <Route exact path="/app/chart/recharts" component={Recharts} />
             
 
-                <Route exact path="/app/manager/storeroom" component={StoreRoom} />
+                <Route exact path="/app/manager/warecards" component={WareCards} />
                 <Route exact path="/app/manager/modals" component={Modals} />
                 <Route exact path="/app/manager/tabs" component={Tabs} />
                 

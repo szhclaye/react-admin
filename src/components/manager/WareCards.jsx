@@ -7,7 +7,7 @@ import BreadcrumbCustom from '../BreadcrumbCustom';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 
-class StoreRoom extends React.Component {
+class WareCards extends React.Component {
     state = { loading: false };
     toggle = (value) => {
         this.setState({ loading: value });
@@ -91,4 +91,4 @@ class StoreRoom extends React.Component {
     }
 }
 
-export default StoreRoom;
+export default WareCards;
