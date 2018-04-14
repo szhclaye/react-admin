@@ -11,7 +11,7 @@ const { Sider } = Layout;
 
 class SiderCustom extends Component {
     state = {
-        collapsed: false,
+        collapsed: false,   
         mode: 'inline',
         openKey: '',
         selectedKey: '',
