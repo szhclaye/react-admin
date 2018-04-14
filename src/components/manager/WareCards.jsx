@@ -4,8 +4,6 @@
 import React, { Component } from 'react';
 import { Row, Col, Card, Input, Table, Button } from 'antd';
 import BreadcrumbCustom from '../BreadcrumbCustom';
-import NProgress from 'nprogress';
-import 'nprogress/nprogress.css';
 
 const Search = Input.Search;
 const columns = [
@@ -66,47 +64,34 @@ const columns = [
     },
 ];
 
-const data = [
-    {
-        key: '1',
-        name: 'John Brown',
-        age: 32,
+const data = [];
+for(let i=1;i<200;i++){
+    data.push({
+        key: i,
+        name: `John Brown-> ${i}`,
+        age: 10+i,
         address: 'New York No. 1 Lake Park',
-    },
-    {
-        key: '2',
-        name: 'Jim Green',
-        age: 42,
-        address: 'London No. 1 Lake Park',
-    },
-    {
-        key: '3',
-        name: 'Joe Black',
-        age: 32,
-        address: 'Sidney No. 1 Lake Park',
-    },
-    {
-        key: '4',
-        name: 'Jim Red',
-        age: 32,
-        address: 'London No. 2 Lake Park',
-    },
-];
+    });
+}
+   
 class WareCards extends Component {
-    state = { loading: false };
-    toggle = value => {
-        this.setState({ loading: value });
+    state = {
+        selectedRowKeys: [],    //选定行数组
     };
-    nprogressStart = () => {
-        NProgress.start();
+    onSelectChange = (selectedRowKeys) => {
+        console.log('selectedRowKeys changed: ', selectedRowKeys);
+        this.setState({ selectedRowKeys });     //更新状态
     };
-    nprogressDone = () => {
-        NProgress.done();
-    };
+
     onChange = (pagination, filters, sorter) => {
         console.log('params', pagination, filters, sorter);
     };
     render() {
+        const { selectedRowKeys } = this.state;
+        const rowSelection = {
+            selectedRowKeys,
+            onChange: this.onSelectChange,
+        };
         return (
             <div className="gutter-example button-demo">
                 <BreadcrumbCustom first="资产管理" second="资产卡片" />
@@ -133,10 +118,11 @@ class WareCards extends Component {
                     </div>
                 </Row>
                 <Row gutter={16}>
-                    <Col className="gutter-row" md={12}>
+                    <Col className="gutter-row" md={24}>
                         <div className="gutter-box">
                             <Card bordered={false}>
                                 <Table
+                                    rowSelection={rowSelection}
                                     columns={columns}
                                     dataSource={data}
                                     onChange={this.onChange}
