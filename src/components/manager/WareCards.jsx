@@ -6,7 +6,7 @@ import BreadcrumbCustom from '../BreadcrumbCustom';
 const Search = Input.Search;
 const columns = [
     {
-        title: 'Name',
+        title: '名称',
         dataIndex: 'name',
         filters: [
             {
@@ -38,13 +38,13 @@ const columns = [
         sorter: (a, b) => a.name.length - b.name.length,
     },
     {
-        title: 'Age',
+        title: '姓名',
         dataIndex: 'age',
         defaultSortOrder: 'descend',
         sorter: (a, b) => a.age - b.age,
     },
     {
-        title: 'Address',
+        title: '地址',
         dataIndex: 'address',
         filters: [
             {
