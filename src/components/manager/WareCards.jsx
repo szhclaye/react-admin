@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { Row, Col, Card, Input, Table, Button } from 'antd';
+import { Row, Col, Card, Input, Table, Button,Modal } from 'antd';
 import BreadcrumbCustom from '../BreadcrumbCustom';
 
 const Search = Input.Search;
@@ -124,6 +124,14 @@ class WareCards extends Component {
                                     columns={columns}
                                     dataSource={data}
                                     onChange={this.onChange}
+                                    onRow={(record, index) => {
+                                        return {
+                                            onClick: () => {
+                                                Modal.confirm({ content: 'ant design' });
+                                                console.log(record, index);
+                                            }
+                                        }
+                                    }}
                                 />
                             </Card>
                         </div>

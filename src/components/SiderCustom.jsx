@@ -1,3 +1,10 @@
+/*
+ * @author: shazhenghu
+ * @module:  SiderBar
+ * @state:  
+ * @props:  
+ * @params: 
+ */
 
 import React, { Component } from 'react';
 import { Layout } from 'antd';
@@ -38,7 +45,7 @@ class SiderCustom extends Component {
             mode: collapsed ? 'vertical' : 'inline',
         });
     };
-    menuClick = e => {
+    menuClick = e => {            //点击选中
         this.setState({
             selectedKey: e.key
         });

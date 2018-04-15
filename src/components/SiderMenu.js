@@ -2,7 +2,7 @@ import React from 'react';
 import { Menu, Icon } from 'antd';
 import { Link } from 'react-router-dom';
 
-const renderMenuItem =
+const renderMenuItem =          /**若无子菜单 */
     ({ key, title, icon, link, ...props }) =>
         <Menu.Item
             key={key || link}
@@ -14,7 +14,7 @@ const renderMenuItem =
             </Link>
         </Menu.Item>;
 
-const renderSubMenu =
+const renderSubMenu =                    /**若有子菜单 */
     ({ key, title, icon, link, sub, ...props }) =>
         <Menu.SubMenu
             key={key || link}
