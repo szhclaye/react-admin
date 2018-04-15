@@ -1,7 +1,7 @@
-
 import React, { Component } from 'react';
-import { Row, Col, Card, Input, Table, Button,Modal } from 'antd';
+import { Row, Col, Card, Input, Table, Button } from 'antd';
 import BreadcrumbCustom from '../BreadcrumbCustom';
+import AddCardModal from './AddCardModal';
 
 const Search = Input.Search;
 const columns = [
@@ -63,27 +63,30 @@ const columns = [
 ];
 
 const data = [];
-for(let i=1;i<200;i++){
+for (let i = 1; i < 200; i++) {
     data.push({
         key: i,
         name: `John Brown-> ${i}`,
-        age: 10+i,
+        age: 10 + i,
         address: 'New York No. 1 Lake Park',
     });
 }
-   
+
 class WareCards extends Component {
     state = {
-        selectedRowKeys: [],    //选定行数组
+        selectedRowKeys: [], //选定行数组
+        visibleOfAddCard: false,
     };
-    onSelectChange = (selectedRowKeys) => {
+    onSelectChange = selectedRowKeys => {
         console.log('selectedRowKeys changed: ', selectedRowKeys);
-        this.setState({ selectedRowKeys });     //更新状态
+        this.setState({ selectedRowKeys }); //更新状态
     };
 
     onChange = (pagination, filters, sorter) => {
         console.log('params', pagination, filters, sorter);
     };
+    
+   
     render() {
         const { selectedRowKeys } = this.state;
         const rowSelection = {
@@ -108,7 +111,8 @@ class WareCards extends Component {
                                 offset={1}
                                 md={6}
                             >
-                                <Button type="primary">新增</Button>
+
+                                <AddCardModal />
                                 <Button type="primary">删除</Button>
                                 <Button type="primary">修改</Button>
                             </Col>
@@ -127,10 +131,9 @@ class WareCards extends Component {
                                     onRow={(record, index) => {
                                         return {
                                             onClick: () => {
-                                                Modal.confirm({ content: 'ant design' });
                                                 console.log(record, index);
-                                            }
-                                        }
+                                            },
+                                        };
                                     }}
                                 />
                             </Card>
