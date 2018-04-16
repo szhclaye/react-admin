@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Modal } from 'antd';
+import { Input,Button, Modal,Row,Col } from 'antd';
 
 class AddCardModal extends Component {
     state = {
@@ -12,13 +12,11 @@ class AddCardModal extends Component {
         });
     };
     handleOkOfAddCard = e => {
-        console.log(e);
         this.setState({
             visibleOfAddCard: false,
         });
     };
     handleCancelOfAddCard = e => {
-        console.log(e);
         this.setState({
             visibleOfAddCard: false,
         });
@@ -32,13 +30,41 @@ class AddCardModal extends Component {
                 </Button>
                 <Modal
                     title="新增卡片"
+                    width="800px"
                     visible={this.state.visibleOfAddCard || visible}
                     onOk={this.handleOkOfAddCard}
                     onCancel={this.handleCancelOfAddCard}
                 >
-                    <p>test AddCardModal</p>
-                    <p>test AddCardModal</p>
-                    <p>test AddCardModal</p>
+                    <Row gutter={16}>
+                        <Col md={8} className="add-new-modal">
+                           <label htmlFor="">资产条码</label>
+                           <Input size="small" style={{width:'65%'}}/>
+                        </Col>
+                        <Col md={8} className="add-new-modal">
+                           <label htmlFor="">资产类别</label>
+                           <Input size="small" style={{width:'65%'}}/>
+                        </Col>
+                        <Col md={8} className="add-new-modal">
+                           <label htmlFor="">资产名称</label>
+                           <Input size="small" style={{width:'65%'}}/>
+                        </Col>
+                    </Row>
+                    <Row gutter={16}>
+                        <Col md={8} className="add-new-modal">
+                           <label htmlFor="">规格型号</label>
+                           <Input size="small" style={{width:'65%'}}/>
+                        </Col>
+                        <Col md={8} className="add-new-modal">
+                           <label htmlFor="">SN号</label>
+                           <Input size="small" style={{width:'65%'}}/>
+                        </Col>
+                        <Col md={8} className="add-new-modal">
+                           <label htmlFor="">计量单位</label>
+                           <Input size="small" style={{width:'65%'}}/>
+                        </Col>
+                    </Row>
+
+
                 </Modal>
             </div>
         );
