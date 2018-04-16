@@ -85,8 +85,7 @@ class WareCards extends Component {
     onChange = (pagination, filters, sorter) => {
         console.log('params', pagination, filters, sorter);
     };
-    
-   
+
     render() {
         const { selectedRowKeys } = this.state;
         const rowSelection = {
@@ -111,7 +110,6 @@ class WareCards extends Component {
                                 offset={1}
                                 md={6}
                             >
-
                                 <AddCardModal />
                                 <Button type="primary">删除</Button>
                                 <Button type="primary">修改</Button>
